@@ -1,0 +1,41 @@
+Como usar o virtualenv do Python no Windows
+pip install virtualenv
+
+
+No caso a criação de uma virtualenv não precisa chamar python. Depois de instalar a virtualenv o comando que você precisa dar é:
+
+virtualenv nomedavirtualenv
+
+Para ativar a virtualenv criada você precisa acessar o arquivo activate da virtualenv com o seguinte comando (estando no diretório que ela foi criada):
+
+nomedavirtualenv\Scripts\activate
+
+
+Instalar o Restframework
+
+pip install django djangorestframework
+pip install markdown
+pip install django-filter
+
+Criar projeto
+
+django-admin startproject orion
+django-admin startapp apporion
+
+criar as tabelas padrão
+
+python manage.py migrate
+
+Rodar em outra porta
+python manage.py runserver 8001
+
+Api busca CNPJ
+https://api-publica.speedio.com.br/buscarcnpj?cnpj=00000000000191
+
+senha padrão django admin
+python manage.py createsuperuser
+suporte
+senha:123master
+
+
+
