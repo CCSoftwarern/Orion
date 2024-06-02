@@ -17,7 +17,7 @@ Including another URLconf
 from django import urls
 from django.contrib import admin
 from django.urls import path, include
-
+from apporion import views
 
 from rest_framework import routers
 from apporion.api import viewsets as apporionsviewsets
@@ -43,9 +43,10 @@ route.register(r'users', apporionsviewsets.UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(route.urls)),
-    path('auth/', include('rest_authtoken.urls')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api-token-auth', obtain_auth_token, name='api_token_auth'),
-    path('detalhe/api-token-auth', CustomAuthToken.as_view())
+    path('', views.principal, name='index'),
+    path('v1/',include(route.urls)),
+    path('v1/auth/', include('rest_authtoken.urls')),
+    path('v1/api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('v1/api-token-auth', obtain_auth_token, name='api_token_auth'),
+    path('v1/detalhe/api-token-auth', CustomAuthToken.as_view())
 ]
