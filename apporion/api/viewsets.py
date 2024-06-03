@@ -15,6 +15,9 @@ class EmpresaViewSet(viewsets.ModelViewSet):
 class DetalhesUsuariosViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.detalhes_usuariosSerializer
     queryset = models.detalhes_usuarios.objects.all()
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    filterset_fields = ['ID_USUARIO']
+    search_fields = ['ID_USUARIO']
 
 
 

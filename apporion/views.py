@@ -7,8 +7,16 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from django.http import HttpResponse
 from django.template import loader
+from django.views.generic.edit import CreateView
+from apporion.models import empresa
+from django.urls import reverse_lazy
 
-
+class AutoCriarEmpresa(CreateView):
+    model = empresa
+    fields = ['RAZAO_SOCIAL','NOME_FANTASIA','RAZAO_SOCIAL','CNPJ','STATUS','CEP','DATA_ABERTURA','DDD','TELEFONE','EMAIL','TIPO_LOGRADOURO','LOGRADOURO','NUMERO','COMPLEMENTO','BAIRRO','MUNICIPIO','UF','LIBERADO_SISTEMA']
+    template_name = 'empresa.html'
+    success_url = reverse_lazy('index')
+ 
 # Create your views here.
 
 # abre a pagina principal
