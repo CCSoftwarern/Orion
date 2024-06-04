@@ -9,9 +9,9 @@ class empresa(models.Model):
    CNPJ = models.CharField(max_length=14)
    STATUS = models.CharField(max_length=10)
    CNAE_PRINCIPAL_DESCRICAO = models.CharField(max_length=255)
-   CNAE_PRINCIPAL_CODIGO = models.IntegerField
+   CNAE_PRINCIPAL_CODIGO = models.IntegerField(null=True)
    CEP = models.CharField(max_length=11)
-   DATA_ABERTURA = models.DateField()
+   DATA_ABERTURA = models.DateField(null=True)
    DDD = models.IntegerField(default=0)
    TELEFONE = models.CharField(max_length=14)
    EMAIL = models.EmailField(max_length=254)
@@ -22,7 +22,7 @@ class empresa(models.Model):
    BAIRRO = models.CharField(max_length=255)
    MUNICIPIO = models.CharField(max_length=150)
    UF = models.CharField(max_length=2)
-   LOGOMARCA = models.TextField()
+   LOGOMARCA = models.TextField(null=True)
    LIBERADO_SISTEMA = models.BooleanField(default=True)
    DADOS_BANCARIOS = models.CharField(max_length=100, default="Não informado")
 
@@ -31,7 +31,7 @@ class detalhes_usuarios(models.Model):
     ID_USUARIO = models.IntegerField(default=0)
     ID_EMPRESA = models.UUIDField()
     NM_USUARIO = models.CharField(max_length=255)
-    FOTO = models.TextField()
+    FOTO = models.TextField(null=True)
 
    # Tabela Clientes
 class clientes(models.Model):
@@ -41,9 +41,9 @@ class clientes(models.Model):
     CNPJ = models.CharField(max_length=14)
     STATUS = models.CharField(max_length=10)
     CNAE_PRINCIPAL_DESCRICAO = models.CharField(max_length=255)
-    CNAE_PRINCIPAL_CODIGO = models.IntegerField
+    CNAE_PRINCIPAL_CODIGO = models.IntegerField(null=True)
     CEP = models.CharField(max_length=11)
-    DATA_ABERTURA = models.DateField()
+    DATA_ABERTURA = models.DateField(null=True)
     DDD = models.IntegerField(default=0)
     TELEFONE = models.CharField(max_length=14)
     EMAIL = models.EmailField(max_length=254)
@@ -54,7 +54,7 @@ class clientes(models.Model):
     BAIRRO = models.CharField(max_length=255)
     MUNICIPIO = models.CharField(max_length=150)
     UF = models.CharField(max_length=2)
-    FOTO = models.TextField()
+    FOTO = models.TextField(null=True)
     LIBERADO_SISTEMA = models.BooleanField(default=True)
     ID_EMPRESA = models.UUIDField(default=0)
     DADOS_BANCARIOS = models.CharField(max_length=100, default="Não informado")
@@ -128,9 +128,9 @@ class operadoras(models.Model):
     CNPJ = models.CharField(max_length=14)
     STATUS = models.CharField(max_length=10)
     CNAE_PRINCIPAL_DESCRICAO = models.CharField(max_length=255)
-    CNAE_PRINCIPAL_CODIGO = models.IntegerField
+    CNAE_PRINCIPAL_CODIGO = models.IntegerField(default=0)
     CEP = models.CharField(max_length=11)
-    DATA_ABERTURA = models.DateField()
+    DATA_ABERTURA = models.DateField(null=True)
     DDD = models.IntegerField(default=0)
     TELEFONE = models.CharField(max_length=14)
     EMAIL = models.EmailField(max_length=254)
@@ -141,7 +141,7 @@ class operadoras(models.Model):
     BAIRRO = models.CharField(max_length=255)
     MUNICIPIO = models.CharField(max_length=150)
     UF = models.CharField(max_length=2)
-    LOGOMARCA = models.TextField()
+    LOGOMARCA = models.TextField(null=True)
     LIBERADO_SISTEMA = models.BooleanField(default=True)
 
 
