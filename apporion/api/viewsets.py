@@ -25,8 +25,8 @@ class ClientesViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ClientesSerializer
     queryset = models.clientes.objects.all()
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ['NOME_FANTASIA','RAZAO_SOCIAL','CNPJ','DATA_ABERTURA','TELEFONE','EMAIL']
-    search_fields = ['NOME_FANTASIA','RAZAO_SOCIAL','CNPJ','DATA_ABERTURA','TELEFONE','EMAIL']
+    filterset_fields = ['ID EMPRESA','NOME_FANTASIA','RAZAO_SOCIAL','CNPJ','DATA_ABERTURA','TELEFONE','EMAIL']
+    search_fields = ['ID EMPRESA','NOME_FANTASIA','RAZAO_SOCIAL','CNPJ','DATA_ABERTURA','TELEFONE','EMAIL']
 
 class ItemClienteViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ItemClientesSerializer
