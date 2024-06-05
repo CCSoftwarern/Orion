@@ -120,6 +120,8 @@ class vendas(models.Model):
     TIPO_RECEBIMENTO = models.CharField(max_length=30, default="0")
     DATA_VENDA = models.DateField(auto_now_add=True, null=True)
     DATA_CANCELAMENTO = models.DateField(null=True)
+    STATUS = models.BooleanField(default=False)
+    MOTIVO_CANCELAMENTO = models.CharField(max_length=200,null=True)
 
 class operadoras(models.Model):
     ID_OPERADORA =models.AutoField(primary_key=True, editable=False)
