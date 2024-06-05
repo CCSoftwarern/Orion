@@ -55,11 +55,11 @@ class FormaPgtoViewSet(viewsets.ModelViewSet):
 # filtros de pesquisa de vendas
 class MetricFilter(filters.FilterSet):
     DATA_VENDA = filters.DateFromToRangeFilter()
-    search_fields =['ID_EMPRESA','DATA_VENDA','DT_EMBARQUE','ID_CLIENTES','NM_CLIENTE','ID_OPERADORA', 'NM_OPERADORA','REEMBOLSO','REEMBOLSO']
+    search_fields =['ID_EMPRESA','DATA_VENDA','DT_EMBARQUE','ID_CLIENTES','NM_CLIENTE','ID_OPERADORA', 'NM_OPERADORA','REEMBOLSO','REEMBOLSO','STATUS']
 
     class Meta:
         model = models.vendas
-        fields = ['ID_EMPRESA','DATA_VENDA','DT_EMBARQUE','ID_CLIENTES','NM_CLIENTE','ID_OPERADORA', 'NM_OPERADORA','REEMBOLSO','REEMBOLSO']
+        fields = ['ID_EMPRESA','DATA_VENDA','DT_EMBARQUE','ID_CLIENTES','NM_CLIENTE','ID_OPERADORA', 'NM_OPERADORA','REEMBOLSO','REEMBOLSO','STATUS']
 
 
 class VendasViewSet(viewsets.ModelViewSet):
